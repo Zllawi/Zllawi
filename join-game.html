@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الانضمام إلى لعبة | لعبة المافيا</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="game-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎭</text></svg>">
+    
+    <!-- إضافة مكتبات Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+    <script src="firebase-config.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <a href="index.html" class="back-link">العودة للرئيسية</a>
+                <h1>الانضمام إلى لعبة</h1>
+            </div>
+            <div class="separator"></div>
+        </header>
+
+        <main class="setup-form">
+            <div class="form-group">
+                <label for="playerName">اسمك:</label>
+                <input type="text" id="playerName" placeholder="أدخل اسمك" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="gameCodeInput">رمز اللعبة:</label>
+                <input type="text" id="gameCodeInput" placeholder="أدخل رمز اللعبة" required>
+            </div>
+            
+            <button class="btn secondary-btn" id="joinGameBtn">انضمام</button>
+        </main>
+
+        <div class="waiting-room" style="display: none;">
+            <h2>تم الانضمام بنجاح!</h2>
+            <p class="room-code">رمز الغرفة: <span id="roomCode">XXXX</span></p>
+            
+            <div class="players-list">
+                <h3>اللاعبون</h3>
+                <ul id="playersList">
+                    <!-- سيتم ملء هذه القائمة بأسماء اللاعبين -->
+                </ul>
+            </div>
+            
+            <p class="waiting-text">بانتظار بدء اللعبة من قبل المضيف...</p>
+        </div>
+    </div>
+
+    <script src="join-game.js"></script>
+</body>
+</html> 
